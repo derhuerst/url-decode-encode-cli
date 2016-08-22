@@ -9,5 +9,9 @@
 	"repository":   "derhuerst/url-decode-encode-cli",
 	"bugs":         "https://github.com/derhuerst/url-decode-encode-cli/issues",
 	"license":      "ISC",
-	"engines":      {"node": ">=4"}
+	"engines":      {"node": ">=4"},
+	"scripts": {
+		"test":       "./test.sh",
+		"prepublish": "npm test"
+	}
 }
