@@ -1,0 +1,13 @@
+{
+	"name":         "url-decode-encode-cli",
+	"description":  "Command line utility for URL decoding & encoding.",
+	"version":      "0.1.0",
+	"files":        ["decode.js", "encode.js"],
+	"keywords":     ["url", "querystring", "encode", "decode", "encoder", "decoder"],
+	"author":       "Jannis R <mail@jannisr.de>",
+	"homepage":     "https://github.com/derhuerst/url-decode-encode-cli",
+	"repository":   "derhuerst/url-decode-encode-cli",
+	"bugs":         "https://github.com/derhuerst/url-decode-encode-cli/issues",
+	"license":      "ISC",
+	"engines":      {"node": ">=4"}
+}
