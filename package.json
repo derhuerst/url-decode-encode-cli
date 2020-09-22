@@ -1,7 +1,8 @@
 {
+	"preferGlobal": true,
 	"name":         "url-decode-encode-cli",
 	"description":  "Command line utility for URL decoding & encoding.",
-	"version":      "0.1.0",
+	"version":      "0.1.1",
 	"files":        ["decode.js", "encode.js"],
 	"bin": {
 		"url-encode": "./encode.js",
