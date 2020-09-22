@@ -19,8 +19,8 @@ npm install -g url-decode-encode-cli
 ## Usage
 
 ```shell
-echo '{"foo": "bar"}' | url-encode # %7B%22foo%22%3A%20%22bar%22%7D
-echo '%7B%22foo%22%3A%20%22bar%22%7D' | url-decode # {"foo": "bar"}
+echo -n '{"foo": "bar"}' | url-encode # %7B%22foo%22%3A%20%22bar%22%7D
+echo -n '%7B%22foo%22%3A%20%22bar%22%7D' | url-decode # {"foo": "bar"}
 ```
 
 

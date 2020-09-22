@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
 blub='{"foo": "bar"}'
-out="$(echo $blub | ./encode.js | ./decode.js)";
+out="$(echo -n $blub | ./encode.js | ./decode.js)";
 
 if [ "$out" != "$blub" ]; then
-	echo "input -> encode -> decode -> output doesn't match"
+	>&2 echo "input -> encode -> decode -> output doesn't match"
 	exit 1
 fi
