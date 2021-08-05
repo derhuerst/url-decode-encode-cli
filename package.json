@@ -1,25 +1,37 @@
 {
 	"preferGlobal": true,
-	"name":         "url-decode-encode-cli",
-	"description":  "Command line utility for URL decoding & encoding.",
-	"version":      "1.0.1",
-	"files":        ["decode.js", "encode.js"],
+	"name": "url-decode-encode-cli",
+	"description": "Command line utility for URL decoding & encoding.",
+	"version": "1.0.1",
+	"files": [
+		"decode.js",
+		"encode.js"
+	],
 	"bin": {
 		"url-encode": "./encode.js",
 		"url-decode": "./decode.js"
 	},
-	"keywords":     ["url", "querystring", "encode", "decode", "encoder", "decoder"],
-	"author":       "Jannis R <mail@jannisr.de>",
-	"homepage":     "https://github.com/derhuerst/url-decode-encode-cli",
-	"repository":   "derhuerst/url-decode-encode-cli",
-	"bugs":         "https://github.com/derhuerst/url-decode-encode-cli/issues",
-	"license":      "ISC",
-	"engines":      {"node": ">=4"},
+	"keywords": [
+		"url",
+		"querystring",
+		"encode",
+		"decode",
+		"encoder",
+		"decoder"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/url-decode-encode-cli",
+	"repository": "derhuerst/url-decode-encode-cli",
+	"bugs": "https://github.com/derhuerst/url-decode-encode-cli/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=4"
+	},
 	"dependencies": {
 		"mri": "^1.1.6"
 	},
 	"scripts": {
 		"test":       "./test.sh",
-		"prepublish": "npm test"
+		"prepublishOnly": "npm test"
 	}
 }

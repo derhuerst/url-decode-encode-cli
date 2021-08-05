@@ -1,4 +1,7 @@
 #!/bin/bash
+set -e
+set -o pipefail
+set -x
 
 blub='{"foo": "bar"}'
 out="$(echo -n $blub | ./encode.js | ./decode.js)";
