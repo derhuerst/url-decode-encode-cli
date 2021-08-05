@@ -27,10 +27,14 @@ if (argv.version || argv.v) {
 	process.exit(0)
 }
 
+// todo: querystring is deprecated, use URLSearchParams, but how? escape non-ASCII characters?
 const qs = require('querystring')
 
 process.stdin
-.on('error', () => process.exit(1))
+.once('error', (err) => {
+	console.error(err)
+	process.exit(1)
+})
 
 let data = ''
 
