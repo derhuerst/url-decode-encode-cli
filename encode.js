@@ -27,21 +27,24 @@ if (argv.version || argv.v) {
 	process.exit(0)
 }
 
+const {pipeline, Transform} = require('stream')
 // todo: querystring is deprecated, use URLSearchParams, but how? escape non-ASCII characters?
 const qs = require('querystring')
 
-process.stdin
-.once('error', (err) => {
-	console.error(err)
-	process.exit(1)
-})
-
-let data = ''
-
-process.stdin
-.on('data', (chunk) => {
-	data += chunk.toString()
-})
-.on('end', () => {
-	process.stdout.write(qs.escape(data))
-})
+pipeline(
+	process.stdin,
+	new Transform({
+		highWaterMark: 10 * 1024 * 1024,
+		transform: function encode (chunk, _, cb) {
+			const data = chunk.toString('utf-8')
+			this.push(qs.escape(data))
+			cb(null)
+		},
+	}),
+	process.stdout,
+	(err) => {
+		if (!err) return;
+		console.error(err)
+		process.exit(1)
+	},
+)
