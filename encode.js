@@ -42,7 +42,7 @@ const {pipeline, Transform} = require('stream')
 const qs = require('querystring')
 const fs = require('fs')
 
-var input_file = undefined
+let input_file
 if (argv._.length == 0) {
     input_file = process.stdin
 } else {
