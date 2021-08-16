@@ -42,7 +42,7 @@ const qs = require('querystring')
 const fs = require('fs')
 
 var input_file = undefined
-if (argv._.length == 0) {
+if (argv._.length === 0 || argv._[0] === '-') {
     input_file = process.stdin
 } else {
     input_file = fs.createReadStream(argv._[0])
