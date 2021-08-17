@@ -50,7 +50,7 @@ if (argv._.length == 0) {
 }
 
 pipeline(
-	input_file,
+	input,
 	new Transform({
 		highWaterMark: 10 * 1024 * 1024,
 		transform: function encode (chunk, _, cb) {
